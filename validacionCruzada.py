@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-# Size: Cantidad de pruebas
+# n: Cantidad de pruebas
 # k: Cantidad de datos de test
 
 def validacionCruzada(n, k):
