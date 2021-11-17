@@ -1,0 +1,17 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from perceptronMulticapa import perceptronMulticapa
+
+df = pd.read_csv('icgtp1datos/irisbin.csv', header=None)
+cantSalidas = 3
+X = df.iloc[:, 0:-1 * cantSalidas].to_numpy()
+Y = df.iloc[:, -1*cantSalidas:].to_numpy()
+capas = [2,3]
+
+W,tasaAcierto = perceptronMulticapa(X,Y,capas,0)
+
+plt.title('Tasa de acierto vs Epoca')
+plt.xlabel("Epocas")
+plt.ylabel("Tasa de acierto")
+plt.plot(tasaAcierto, color='g')
+plt.show()
